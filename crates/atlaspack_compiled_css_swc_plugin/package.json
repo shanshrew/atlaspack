@@ -1,0 +1,34 @@
+{
+  "name": "swc-noop-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SWC plugin (noop) built in Rust, packaged for SWC plugin runtime.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "build:wasm": "cargo build --locked --release -F plugin --target wasm32-wasip1",
+    "build:dev": "cargo build --locked -F plugin --target wasm32-wasip1",
+    "test": "cargo test --locked",
+    "test:compat": "bun test compat-tests",
+    "playground": "bun run compat-tests/playground.js",
+    "test:perf": "cargo test --locked --release --test perf -- --ignored --nocapture"
+  },
+  "engines": {
+    "node": ">=18",
+    "npm": ">=9"
+  },
+  "keywords": "[\"swc\",\"plugin\",\"rust\",\"wasm\"]",
+  "repository": {
+    "type": "git"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@compiled/babel-plugin": "^0.38.1",
+    "@compiled/babel-plugin-strip-runtime": "^0.38.0",
+    "@swc/core": "1.11.18",
+    "@swc/helpers": "^0.5.11"
+  },
+  "dependencies": {
+    "@swc/plugin-styled-components": "^7.1.5"
+  }
+}
