@@ -29,3 +29,6 @@ node_modules
 tmp
 fixtures
 /target/**/*
+
+# Ignore compiled CSS SWC plugin tests and helpers
+crates/atlaspack_compiled_css_swc_plugin/**
